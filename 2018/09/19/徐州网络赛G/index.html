@@ -146,20 +146,20 @@
 
 
 
-  <meta name="description" content="Trace传送门：https://nanti.jisuanke.com/t/31459 problemThere’s a beach in the first quadrant. And from time to time, there are sea waves. A wave ( xx , yy ) means the wave is a rectangle whose vertexes ar">
+  <meta name="description" content="Trace传送门：https://nanti.jisuanke.com/t/31459">
 <meta name="keywords" content="map,二分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="徐州网络赛 2018 G">
 <meta property="og:url" content="http://yoursite.com/2018/09/19/徐州网络赛G/index.html">
 <meta property="og:site_name" content="lc">
-<meta property="og:description" content="Trace传送门：https://nanti.jisuanke.com/t/31459 problemThere’s a beach in the first quadrant. And from time to time, there are sea waves. A wave ( xx , yy ) means the wave is a rectangle whose vertexes ar">
+<meta property="og:description" content="Trace传送门：https://nanti.jisuanke.com/t/31459">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="c:/Users/87054/AppData/Local/Temp/1537333176647.png">
-<meta property="og:updated_time" content="2018-09-19T14:07:45.140Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/徐州网络赛G/C:/Users/87054/AppData/Local/Temp/1537333176647.png">
+<meta property="og:updated_time" content="2018-09-19T14:28:48.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="徐州网络赛 2018 G">
-<meta name="twitter:description" content="Trace传送门：https://nanti.jisuanke.com/t/31459 problemThere’s a beach in the first quadrant. And from time to time, there are sea waves. A wave ( xx , yy ) means the wave is a rectangle whose vertexes ar">
-<meta name="twitter:image" content="c:/Users/87054/AppData/Local/Temp/1537333176647.png">
+<meta name="twitter:description" content="Trace传送门：https://nanti.jisuanke.com/t/31459">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/19/徐州网络赛G/C:/Users/87054/AppData/Local/Temp/1537333176647.png">
 
 
 
@@ -425,7 +425,7 @@
                 
               
 
-              <time title="创建时间：2018-09-19 10:59:30 / 修改时间：22:07:45" itemprop="dateCreated datePublished" datetime="2018-09-19T10:59:30+08:00">2018-09-19</time>
+              <time title="创建时间：2018-09-19 10:59:30 / 修改时间：22:28:48" itemprop="dateCreated datePublished" datetime="2018-09-19T10:59:30+08:00">2018-09-19</time>
             
 
             
@@ -482,12 +482,13 @@
 
       
         <h2 id="Trace"><a href="#Trace" class="headerlink" title="Trace"></a>Trace</h2><p>传送门：<a href="https://nanti.jisuanke.com/t/31459" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/31459</a></p>
+<a id="more"></a>
 <h4 id="problem"><a href="#problem" class="headerlink" title="problem"></a>problem</h4><p>There’s a beach in the first quadrant. And from time to time, there are sea waves. A wave ( xx , yy ) means the wave is a rectangle whose vertexes are ( 00 , 00 ), ( xx , 00 ), ( 00 , yy ), ( xx , yy ). Every time the wave will wash out the trace of former wave in its range and remain its own trace of ( xx , 00 ) -&gt; ( xx , yy ) and ( 00 , yy ) -&gt; ( xx , yy ). Now the toad on the coast wants to know the total length of trace on the coast after n waves. It’s guaranteed that a wave will not cover the other completely. </p>
 <h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><p>The first line is the number of waves n(n \le 50000)n(n≤50000).</p>
 <p>The next nn lines，each contains two numbers xx yy ,( 0 &lt; x0&lt;x , y \le 10000000y≤10000000 )，the ii-th line means the ii-th second there comes a wave of ( xx , yy ), it’s guaranteed that when 1 \le i1≤i , j \le nj≤n ，x_i \le x_jxi≤xj and y_i \le y_jyi≤yj don’t set up at the same time.</p>
 <h4 id="output"><a href="#output" class="headerlink" title="output"></a>output</h4><p>An Integer stands for the answer. </p>
 <h4 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h4><p>As for the sample input, the answer is 3+3+1+1+1+1=103+3+1+1+1+1=10 </p>
-<p><img src="C:\Users\87054\AppData\Local\Temp\1537333176647.png" alt="1537333176647"></p>
+<p><img src="/2018/09/19/徐州网络赛G/C:/Users\87054\AppData\Local\Temp\1537333176647.png" alt="1537333176647"></p>
 <h4 id="sample-input"><a href="#sample-input" class="headerlink" title="sample input"></a>sample input</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 4</span><br><span class="line">4 1</span><br><span class="line">3 3</span><br></pre></td></tr></table></figure>
 <h4 id="sample-output"><a href="#sample-output" class="headerlink" title="sample output"></a>sample output</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10</span><br></pre></td></tr></table></figure>
 <h4 id="大意："><a href="#大意：" class="headerlink" title="大意："></a>大意：</h4><p>依次输入n个矩形，后输入的会遮挡之前输入的矩形，并且没有一个矩形可以完全覆盖另一个矩形，求最后所有矩形轮廓长度和。</p>
