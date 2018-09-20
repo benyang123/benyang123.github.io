@@ -2,7 +2,24 @@
 <search>
   <entry>
     <title><![CDATA[徐州网络赛 2018 G]]></title>
-    <url>%2F2018%2F09%2F19%2F%E5%BE%90%E5%B7%9E%E7%BD%91%E7%BB%9C%E8%B5%9BG%2F</url>
+    <url>%2F2018%2F09%2F20%2F%E5%BE%90%E5%B7%9E%E7%BD%91%E7%BB%9C%E8%B5%9BG%2F</url>
+    <content type="text"><![CDATA[Trace传送门：https://nanti.jisuanke.com/t/31459 problemThere’s a beach in the first quadrant. And from time to time, there are sea waves. A wave ( xx , yy ) means the wave is a rectangle whose vertexes are ( 00 , 00 ), ( xx , 00 ), ( 00 , yy ), ( xx , yy ). Every time the wave will wash out the trace of former wave in its range and remain its own trace of ( xx , 00 ) -&gt; ( xx , yy ) and ( 00 , yy ) -&gt; ( xx , yy ). Now the toad on the coast wants to know the total length of trace on the coast after n waves. It’s guaranteed that a wave will not cover the other completely. inputThe first line is the number of waves n(n \le 50000)n(n≤50000). The next nn lines，each contains two numbers xx yy ,( 0 &lt; x0&lt;x , y \le 10000000y≤10000000 )，the ii-th line means the ii-th second there comes a wave of ( xx , yy ), it’s guaranteed that when 1 \le i1≤i , j \le nj≤n ，x_i \le x_jxi≤xj and y_i \le y_jyi≤yj don’t set up at the same time. outputAn Integer stands for the answer. hintAs for the sample input, the answer is 3+3+1+1+1+1=103+3+1+1+1+1=10 sample input123431 44 13 3 sample output110 大意：依次输入n个矩形，后输入的会遮挡之前输入的矩形，并且没有一个矩形可以完全覆盖另一个矩形，求最后所有矩形轮廓长度和。 思路：脑补一下过程，大概就是分x方向与y方向分别讨论，注意没有一个矩形可以完全覆盖另一个矩形，所以每次只要加上与被覆盖的最大的矩形的差值就好，注意从后往前扫。 12345678910111213141516171819202122232425262728293031323334353637#include &lt;cstdio&gt;#include &lt;set&gt;#include &lt;algorithm&gt;using namespace std;typedef long long ll;#define maxn 50001set&lt;int&gt; st;set&lt;int&gt; st2;int a[maxn];int b[maxn];ll ans1;ll ans2;int main()&#123; int n; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; scanf("%d",&amp;a[i]); scanf("%d",&amp;b[i]); &#125; ans1=0; ans2=0; st.insert(0); st2.insert(0); for(int i=n;i&gt;=1;i--)&#123; ans1+=a[i]-*(--lower_bound(st.begin(),st.end(),a[i])); st.insert(a[i]); ans2+=b[i]-*(--lower_bound(st2.begin(),st2.end(),b[i])); st2.insert(b[i]); &#125; printf("%lld\n",ans1+ans2); return 0;&#125; 比赛中好多队都A了，不知道为何比赛中后期队里思维都比较迟钝，可能还是打的少吧。]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>map</tag>
+        <tag>二分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[徐州网络赛G]]></title>
+    <url>%2F2018%2F09%2F20%2F%E5%BE%90%E5%B7%9E%E7%BD%91%E7%BB%9C%E8%B5%9BG-1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[徐州网络赛 2018 G]]></title>
+    <url>%2F2018%2F09%2F19%2F%E5%BE%90%E5%B7%9E%E7%BD%91%E7%BB%9C%E8%B5%9BG1%2F</url>
     <content type="text"><![CDATA[Trace传送门：https://nanti.jisuanke.com/t/31459 problemThere’s a beach in the first quadrant. And from time to time, there are sea waves. A wave ( xx , yy ) means the wave is a rectangle whose vertexes are ( 00 , 00 ), ( xx , 00 ), ( 00 , yy ), ( xx , yy ). Every time the wave will wash out the trace of former wave in its range and remain its own trace of ( xx , 00 ) -&gt; ( xx , yy ) and ( 00 , yy ) -&gt; ( xx , yy ). Now the toad on the coast wants to know the total length of trace on the coast after n waves. It’s guaranteed that a wave will not cover the other completely. inputThe first line is the number of waves n(n \le 50000)n(n≤50000). The next nn lines，each contains two numbers xx yy ,( 0 &lt; x0&lt;x , y \le 10000000y≤10000000 )，the ii-th line means the ii-th second there comes a wave of ( xx , yy ), it’s guaranteed that when 1 \le i1≤i , j \le nj≤n ，x_i \le x_jxi≤xj and y_i \le y_jyi≤yj don’t set up at the same time. outputAn Integer stands for the answer. hintAs for the sample input, the answer is 3+3+1+1+1+1=103+3+1+1+1+1=10 sample input123431 44 13 3 sample output110 大意：依次输入n个矩形，后输入的会遮挡之前输入的矩形，并且没有一个矩形可以完全覆盖另一个矩形，求最后所有矩形轮廓长度和。 思路：脑补一下过程，大概就是分x方向与y方向分别讨论，注意没有一个矩形可以完全覆盖另一个矩形，所以每次只要加上与被覆盖的最大的矩形的差值就好，注意从后往前扫。 12345678910111213141516171819202122232425262728293031323334353637#include &lt;cstdio&gt;#include &lt;set&gt;#include &lt;algorithm&gt;using namespace std;typedef long long ll;#define maxn 50001set&lt;int&gt; st;set&lt;int&gt; st2;int a[maxn];int b[maxn];ll ans1;ll ans2;int main()&#123; int n; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; scanf("%d",&amp;a[i]); scanf("%d",&amp;b[i]); &#125; ans1=0; ans2=0; st.insert(0); st2.insert(0); for(int i=n;i&gt;=1;i--)&#123; ans1+=a[i]-*(--lower_bound(st.begin(),st.end(),a[i])); st.insert(a[i]); ans2+=b[i]-*(--lower_bound(st2.begin(),st2.end(),b[i])); st2.insert(b[i]); &#125; printf("%lld\n",ans1+ans2); return 0;&#125; 比赛中好多队都A了，不知道为何比赛中后期队里思维都比较迟钝，可能还是打的少吧。]]></content>
       <categories>
         <category>ACM</category>
