@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[qqUI]]></title>
+    <url>%2F2018%2F10%2F17%2FqqUI-0%2F</url>
+    <content type="text"><![CDATA[Login_ui来自一个钢铁直男的ui。感觉android的layout和前端的html&amp;css一模一样，或许是因为移动端屏幕小的缘故吧，感觉比前端简单一些。 过程也很顺利。]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[android入门]]></title>
     <url>%2F2018%2F10%2F16%2Fandroid_note1%20%2F</url>
     <content type="text"><![CDATA[Android组件（一）Activity一个activity就是一个页面。 （二）Service完成耗时较长的操作，如网络连接，在后台运行。 （三）Content Provider对外提供数据。 （四）BroadcastReceiver监听手机出项的各种情况，起接收功能。 设置View属性方法一：layout中的xml中设置 方法二：MainActivity中用java来实现属性修改 为控件绑定监听器（一）获取代表控件的对象（二）定义一个类，实现监听器的接口（三）生成监听器对象（四）为控件绑定监听器对象控件布局方法一：使用布局文件完成控件布局 方法二：在Java代码中完成控件布局 布局方法分类Linear Layout/Relative Layout ListView/Grid View 线性布局初步：layout新建一个xml； Linear Layout里加控件； MainActivity.java—&gt;onCreate（）函数—&gt;setContentView（R.layout.调用的xml）; 距离单位距离单位px：像素 距离单位dp：较稳定（控件高度和宽度） 距离单位sp：随着用户设置字体的变化而变化（控件字体）]]></content>
