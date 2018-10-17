@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-17T02:44:50.575Z</updated>
+  <updated>2018-10-17T02:46:39.086Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>qqUI</title>
+    <title>loginUI</title>
     <link href="http://yoursite.com/2018/10/17/qqUI-0/"/>
     <id>http://yoursite.com/2018/10/17/qqUI-0/</id>
     <published>2018-10-17T02:40:24.000Z</published>
-    <updated>2018-10-17T02:44:50.575Z</updated>
+    <updated>2018-10-17T02:46:39.086Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Login-ui"><a href="#Login-ui" class="headerlink" title="Login_ui"></a>Login_ui</h2><h4 id="来自一个钢铁直男的ui。"><a href="#来自一个钢铁直男的ui。" class="headerlink" title="来自一个钢铁直男的ui。"></a>来自一个钢铁直男的ui。</h4><p>感觉android的layout和前端的html&amp;css一模一样，或许是因为移动端屏幕小的缘故吧，感觉比前端简单一些。</p><a id="more"></a><p>过程也很顺利。</p><p><img src="/2018/10/17/qqUI-0/qqUI/qq_ui.jpg" alt="login"></p>]]></content>
     
@@ -50,28 +50,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Android组件&quot;&gt;&lt;a href=&quot;#Android组件&quot; class=&quot;headerlink&quot; title=&quot;Android组件&quot;&gt;&lt;/a&gt;Android组件&lt;/h2&gt;&lt;h4 id=&quot;（一）Activity&quot;&gt;&lt;a href=&quot;#（一）Activity&quot; class=&quot;headerlink&quot; title=&quot;（一）Activity&quot;&gt;&lt;/a&gt;（一）Activity&lt;/h4&gt;&lt;p&gt;一个activity就是一个页面。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://yoursite.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://yoursite.com/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>login_ui</title>
-    <link href="http://yoursite.com/2018/10/16/QQui/"/>
-    <id>http://yoursite.com/2018/10/16/QQui/</id>
-    <published>2018-10-16T14:56:03.940Z</published>
-    <updated>2018-10-17T02:35:22.635Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Login-ui"><a href="#Login-ui" class="headerlink" title="Login_ui"></a>Login_ui</h2><h4 id="来自一个钢铁直男的ui。"><a href="#来自一个钢铁直男的ui。" class="headerlink" title="来自一个钢铁直男的ui。"></a>来自一个钢铁直男的ui。</h4><p>感觉android的layout和前端的html&amp;css一模一样，或许是因为移动端屏幕小的缘故吧，感觉比前端简单一些。</p><a id="more"></a><p>过程也很顺利。</p><p><img src="/2018/10/16/QQui/qq_ui.jpg" alt="login"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Login-ui&quot;&gt;&lt;a href=&quot;#Login-ui&quot; class=&quot;headerlink&quot; title=&quot;Login_ui&quot;&gt;&lt;/a&gt;Login_ui&lt;/h2&gt;&lt;h4 id=&quot;来自一个钢铁直男的ui。&quot;&gt;&lt;a href=&quot;#来自一个钢铁直男的ui。&quot; class=&quot;headerlink&quot; title=&quot;来自一个钢铁直男的ui。&quot;&gt;&lt;/a&gt;来自一个钢铁直男的ui。&lt;/h4&gt;&lt;p&gt;感觉android的layout和前端的html&amp;amp;css一模一样，或许是因为移动端屏幕小的缘故吧，感觉比前端简单一些。&lt;/p&gt;
     
     </summary>
     
