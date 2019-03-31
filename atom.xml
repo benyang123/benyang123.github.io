@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-17T02:51:07.760Z</updated>
+  <updated>2019-03-20T05:48:04.867Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,118 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>对拍程序</title>
+    <link href="http://yoursite.com/2019/03/20/%E5%AF%B9%E6%8B%8D%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://yoursite.com/2019/03/20/对拍程序/</id>
+    <published>2019-03-20T05:48:04.000Z</published>
+    <updated>2019-03-20T05:48:04.867Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>中国剩余定理</title>
+    <link href="http://yoursite.com/2019/03/19/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/"/>
+    <id>http://yoursite.com/2019/03/19/中国剩余定理/</id>
+    <published>2019-03-19T08:22:40.000Z</published>
+    <updated>2019-03-20T05:09:54.028Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><h3 id="定理内容及解法"><a href="#定理内容及解法" class="headerlink" title="定理内容及解法"></a>定理内容及解法</h3><h4 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h4><p>以一个简单经典的例子来看：</p><p>古有言<strong>今有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？</strong> </p><a id="more"></a><p>就是说，存在一个数x，除以3余2，除以5余3，除以7余2，然后求这个数。 </p><p>首先我们可以通过列举法，枚举除以3余2的数字，5，8，11，14，17，20，23，25；同理枚举除以5余3的数字，8，13，18，23，28；接着枚举除以7余2的数字，9，16，23，30……</p><p>通过观察得到23为最小的符合条件的整数。又3，5，7两两互质，所以lcm(3,5,7)=105，23+105n为此题的解集。</p><p>接着看看古人的解法：《孙子算经》中讲到，<strong>“三三数之剩二，置一百四十；五五数之剩三，置六十三；七七数之剩二，置三十。并之，得二百三十三，以二百十减之，即得。”“答曰：二十三。”</strong> </p><p>意思就是：<br>$$<br>70<em>2+21</em>3+15<em>2-105</em>n<br>$$<br>n=1时即为答案23。公式中2，3，2分别为三个余数，重点考虑一下70，21，15的由来，因为70可以同时整除5和7，且模3余1，所以它乘上2就能凑够对3余2，并且乘2对5和7没有影响；21、15同理。最后能得到一个满足条件的解，解减去最小公倍数对取模没有影响，仍然符合条件，所以可以得到最小正解。</p><h4 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h4><p>n（mod xi）=mi</p><p>一共k组限制，来构造最小的n。</p><h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p>​                            <code>令s=s1*s2*s3*s4*…sn</code></p><p>​                            <code>求r1,r2,r3...rk。        ri=s/xi</code></p><p>​                            <code>求最小的a1,a2,a3...ak。需要ai(mod xi)=1</code></p><p>​                            <code>求a1*x1+a2*x2+...+ai*xi,并减去ns，使结果为最小正整数</code></p><p>其中第三步可以枚举，更好的方法是扩展欧几里得（exbcd）。</p><h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>poj1006(Biorhythms)</p><p>传送门：<a href="http://poj.org/problem?id=1006" target="_blank" rel="noopener">http://poj.org/problem?id=1006</a></p><h4 id="problem"><a href="#problem" class="headerlink" title="problem"></a>problem</h4><p>Some people believe that there are three cycles in a person’s life that start the day he or she is born. These three cycles are the physical, emotional, and intellectual cycles, and they have periods of lengths 23, 28, and 33 days, respectively. There is one peak in each period of a cycle. At the peak of a cycle, a person performs at his or her best in the corresponding field (physical, emotional or mental). For example, if it is the mental curve, thought processes will be sharper and concentration will be easier.  Since the three cycles have different periods, the peaks of the three cycles generally occur at different times. We would like to determine when a triple peak occurs (the peaks of all three cycles occur in the same day) for any person. For each cycle, you will be given the number of days from the beginning of the current year at which one of its peaks (not necessarily the first) occurs. You will also be given a date expressed as the number of days from the beginning of the current year. You task is to determine the number of days from the given date to the next triple peak. The given date is not counted. For example, if the given date is 10 and the next triple peak occurs on day 12, the answer is 2, not 3. If a triple peak occurs on the given date, you should give the number of days to the next occurrence of a triple peak.  </p><h5 id="input"><a href="#input" class="headerlink" title="input"></a>input</h5><p>You will be given a number of cases. The input for each case consists of one line of four integers p, e, i, and d. The values p, e, and i are the number of days from the beginning of the current year at which the physical, emotional, and intellectual cycles peak, respectively. The value d is the given date and may be smaller than any of p, e, or i. All values are non-negative and at most 365, and you may assume that a triple peak will occur within 21252 days of the given date. The end of input is indicated by a line in which p = e = i = d = -1. </p><h5 id="output"><a href="#output" class="headerlink" title="output"></a>output</h5><p>For each test case, print the case number followed by a message indicating the number of days to the next triple peak, in the form:   Case 1: the next triple peak occurs in 1234 days.   Use the plural form <code></code>days’’ even if the answer is 1. </p><h5 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0 0 0 0</span><br><span class="line">0 0 0 100</span><br><span class="line">5 20 34 325</span><br><span class="line">4 5 6 7</span><br><span class="line">283 102 23 320</span><br><span class="line">203 301 203 40</span><br><span class="line">-1 -1 -1 -1</span><br></pre></td></tr></table></figure><h5 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Case 1: the next triple peak occurs in 21252 days.</span><br><span class="line">Case 2: the next triple peak occurs in 21152 days.</span><br><span class="line">Case 3: the next triple peak occurs in 19575 days.</span><br><span class="line">Case 4: the next triple peak occurs in 16994 days.</span><br><span class="line">Case 5: the next triple peak occurs in 8910 days.</span><br><span class="line">Case 6: the next triple peak occurs in 10789 days.</span><br></pre></td></tr></table></figure><h5 id="大意"><a href="#大意" class="headerlink" title="大意"></a>大意</h5><p>人的体力、感情、智力出现高峰的周期为23、28、33天，分别给一个从当年开始第一次出现高峰的天数p、e、i（不一定是第一次出现高峰），再给一个从当年开始的时间d，问下一个三个高峰相交的天数距这个时间的间隔。</p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p><code>（n+d)%23=p、（n+d)%28=e、（n+d)%33=i</code></p><p>然后裸的中国剩余定理就好了，注意间隔为0时输出lcm就好。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define maxn 4</span><br><span class="line"></span><br><span class="line">int xx[maxn];//mod</span><br><span class="line">int mm[maxn];//余数</span><br><span class="line">int rr[maxn];</span><br><span class="line">int aa[maxn];</span><br><span class="line">int y;</span><br><span class="line"></span><br><span class="line">void exgcd(int a,int b,int &amp;x,int &amp;y)&#123;</span><br><span class="line">    if(b==0)&#123;</span><br><span class="line">        x=1;</span><br><span class="line">        y=0;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        exgcd(b,a%b,y,x);</span><br><span class="line">        y-=(a/b)*x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int p,e,i,d;</span><br><span class="line">    int re;</span><br><span class="line">    int Case=1;</span><br><span class="line">    while(cin&gt;&gt;p&gt;&gt;e&gt;&gt;i&gt;&gt;d)&#123;</span><br><span class="line">        if(p==-1&amp;&amp;e==-1&amp;&amp;i==-1&amp;&amp;d==-1)&#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        re=0;</span><br><span class="line">        mm[1]=p,mm[2]=e,mm[3]=i;</span><br><span class="line">        xx[1]=23,xx[2]=28,xx[3]=33;</span><br><span class="line">        int s=1;</span><br><span class="line">        for(int i=1;i&lt;=3;i++)&#123;</span><br><span class="line">            s*=xx[i];</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=1;i&lt;=3;i++)&#123;</span><br><span class="line">            rr[i]=s/xx[i];</span><br><span class="line">            exgcd(rr[i],xx[i],aa[i],y);</span><br><span class="line">            aa[i]=(aa[i]%xx[i]+xx[i])%xx[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        re=((aa[1]*mm[1]*rr[1]+aa[2]*mm[2]*rr[2]+aa[3]*mm[3]*rr[3]-d)%s+s)%s;</span><br><span class="line">        if(re==0) re=s;</span><br><span class="line">        cout&lt;&lt;&quot;Case &quot;&lt;&lt;Case&lt;&lt;&quot;: the next triple peak occurs in &quot;&lt;&lt;re&lt;&lt;&quot; days.&quot;&lt;&lt;endl;</span><br><span class="line">        Case++;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;中国剩余定理&quot;&gt;&lt;a href=&quot;#中国剩余定理&quot; class=&quot;headerlink&quot; title=&quot;中国剩余定理&quot;&gt;&lt;/a&gt;中国剩余定理&lt;/h2&gt;&lt;h3 id=&quot;定理内容及解法&quot;&gt;&lt;a href=&quot;#定理内容及解法&quot; class=&quot;headerlink&quot; title=&quot;定理内容及解法&quot;&gt;&lt;/a&gt;定理内容及解法&lt;/h3&gt;&lt;h4 id=&quot;引入&quot;&gt;&lt;a href=&quot;#引入&quot; class=&quot;headerlink&quot; title=&quot;引入&quot;&gt;&lt;/a&gt;引入&lt;/h4&gt;&lt;p&gt;以一个简单经典的例子来看：&lt;/p&gt;
+&lt;p&gt;古有言&lt;strong&gt;今有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？&lt;/strong&gt; &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ACM" scheme="http://yoursite.com/categories/ACM/"/>
+    
+    
+      <category term="数论" scheme="http://yoursite.com/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>环信sdk_试用</title>
+    <link href="http://yoursite.com/2018/12/08/%E7%8E%AF%E4%BF%A1sdk/"/>
+    <id>http://yoursite.com/2018/12/08/环信sdk/</id>
+    <published>2018-12-08T08:22:53.584Z</published>
+    <updated>2019-03-15T13:02:37.548Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="环信sdk开发"><a href="#环信sdk开发" class="headerlink" title="环信sdk开发"></a>环信sdk开发</h2><p>doc 文件夹：SDK 相关 API 文档</p><p>examples 文件夹：ChatDemoUI3.0（Demo,依赖 EaseUI 库）、EaseUI</p><p>libs.av 文件夹：包含IM和实时音视频功能所需要的 jar 和 so 文件</p><p>libs.lite 文件夹：无实时语音、实时视频功能的 SDK 包，如果项目中只用到聊天功能，可以把项目里的 jar 和 so 文件替换成此文件夹里的文件</p><p>tools：方便环信2.0升级环信3.0</p><p>一些坑：</p><p>配置时sdk最低版本</p><p>v4/v8兼容问题</p><p>module中</p><p>wedget/presenter/EaseImageView中不能识别变量，报错。</p><p>改为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int saveFlags = Canvas.ALL_SAVE_FLAG;</span><br><span class="line">canvas.saveLayer(0, 0, width, height, null, saveFlags);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;环信sdk开发&quot;&gt;&lt;a href=&quot;#环信sdk开发&quot; class=&quot;headerlink&quot; title=&quot;环信sdk开发&quot;&gt;&lt;/a&gt;环信sdk开发&lt;/h2&gt;&lt;p&gt;doc 文件夹：SDK 相关 API 文档&lt;/p&gt;
+&lt;p&gt;examples 文件夹：ChatDemo
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>18-扇贝杯</title>
+    <link href="http://yoursite.com/2018/11/18/18-19%E6%89%87%E8%B4%9D%E6%9D%AF/"/>
+    <id>http://yoursite.com/2018/11/18/18-19扇贝杯/</id>
+    <published>2018-11-18T11:52:56.997Z</published>
+    <updated>2018-11-23T13:51:40.860Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="第一次参加扇贝杯，有点儿小激动"><a href="#第一次参加扇贝杯，有点儿小激动" class="headerlink" title="第一次参加扇贝杯，有点儿小激动"></a>第一次参加扇贝杯，有点儿小激动</h3><p>其实，去年专业里就有同学参加扇贝杯了，也都拿了奖，之后我就决定开始练练算法，报一下明年的扇贝杯。</p><p>6月进了校队，大概练了整整3个月吧，结果就是基本数据结构从生疏到熟练，掌握stl，能做简单的贪心和动态规</p><a id="more"></a><p>划，能根据范围判断大概的时间复杂度，类似图论、树等等acm算法有所了解，知道大概原理，能百度做题…</p><p>虽然之前没有参加过，但还是奔着一去的，毕竟一等奖有15个，也不是没有机会，再不济二还是有的吧。</p><p>话虽然这么说，其实还是很紧张的，万一爆0（没做出任意一道题），也不是没有可能。</p><p>比赛前一晚忽然说c++环境为Dev-c，赶紧下载了一个，从网上随便拉了一个题试了试，只能说ui太复古，用不习惯，高亮也看着不舒服。</p><p>带着薛神的毒奶，进考场了。</p><p><img src="/2018/11/18/18-19扇贝杯/../img/18扇贝杯1.jpg" alt=""> </p><p>ps 一直在思考学校最贵的饭是啥，平时觉得都不便宜，要找最贵的还真想不到…</p><p>现场还是蛮紧张的，赛前没事做就测试了一下环境，拿cb敲了一个gcd，然后又拿eclipse写了个大数，其实是第一次用eclipse..</p><p>因为是”oi“赛制，所以没怎么记数据范围（可以水分），就大概记录一下过程，之后等放出题好好写个题解。</p><p>A：水题，一个数字n，输入1-n中不相同的n-1个数字，输出没出现的那个数字。大概估了下范围，用个哈希表记录一下，扫一次就ok了。因为进系统的姿势不对，浪费了几分钟，榜上找不到自己…</p><p>B：贪心题，n个航班，第i个航班会在第i分钟起飞，每个航班对应一个c，含义为投诉量，现在由于某些原因，飞机在前k分钟不能起飞，只能在第k+1分钟到第k+n分钟起飞，而且第i个飞机实际起飞的时间不大于i，对每个航班，延误m分钟，就会有c*m个投诉，求投诉总量最小值。</p><p>策略很快就想出来了，对每分钟，取没起飞的，实际起飞时间小于等于这分钟的投诉量最大的航班，投诉量相同，取哪个都没影响，struct存每个航班的信息，大概算了一下时间复杂度不够，但应该可以拿部分分。</p><p>然后wa….了半个小时，至少你给个P…A啊，调了半个小时，没调出来，心态小炸。</p><p>C：大概扫一眼，没看错的话是计算几何，溜了。</p><p>D：给一个字符串，然后这个字符串按金字塔形状循环排，第一行1，第二行3，第三行5，k次询问，问第i行某个字母的出现次数。</p><p>看到10^18就知道ac无缘了，算一下没一行索引公式，直接计数，wa…了半个小时，同样没给P..A，心态炸了，时间过去将近1个多小时，我刷了下榜，找了3、4页，没发现自己的名字，我知道这次不可能有奖了。</p><p>E：多组字符串排序，根据自己输入的字母序排，不考虑大小写，如果相同保持原序。</p><p>可能因为B、D无限wa的原因吧，读完题感觉不难，但就是没有一点思路，过。</p><p>看到G拿分的人不少，跳了F。</p><p>G：给一个m*n的乘法表，输出第k大的数。</p><p>直接暴力，把m*n个数存到vector中，sort一下就好。然后又wa啦啦啦啦啦，调了一个小时没出来，刷个榜怀疑人生，排名100+/270+，还有好多没来比赛的…</p><p>分界线</p><p>——————</p><p>话说不断提交还是有用的，后来瞎jb把锅甩给数据范围，把long long改成int，交了一发，给了20分好像，忽然顿悟。把所有I64d改成lld，连交三题，分别拿了40，60，50，瞬间250分，排名到了第一页，那个感觉真的爽。</p><p>然后马上封榜了（看不到提交记录+排名+提交结果），以最后一次提交为准，导致拿到部分分数的题不敢继续做嘤嘤嘤。</p><p>开始写E，感觉思路和心态是有关系的，忽然发现不就是一个重写sort吗，然后过了样例，自己hack了自己两发，交了，因为封榜前好多人拿了100，求个AC。</p><p>然后看没看过的题，F，求n个数的最大不可表说，计算几何，推了半天没推出来，只发现gcd为1，她们的最大不可表数为无穷，输出-1，骗个分。</p><p>G、H、J没有思路，正好也结束了..</p><p>最后看排名的时候寄希望于E的100，结果只过了两个点，F给了5分（给分很人性化了）。</p><p>薛神并列第二，420分，tql。</p><p>自己拿到了预期的二，距离一还差一口气，</p><h4 id="一点经验："><a href="#一点经验：" class="headerlink" title="一点经验："></a>一点经验：</h4><p>赛后才知道有FAQ，想想自己太年轻了。</p><p>类蓝桥杯的比赛尽量在封榜前做完，1A确实困难。</p><p>计算几何也可以尝试，C也有好多人拿分。</p><p>会抽空补下题，尽量写一个题解。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;第一次参加扇贝杯，有点儿小激动&quot;&gt;&lt;a href=&quot;#第一次参加扇贝杯，有点儿小激动&quot; class=&quot;headerlink&quot; title=&quot;第一次参加扇贝杯，有点儿小激动&quot;&gt;&lt;/a&gt;第一次参加扇贝杯，有点儿小激动&lt;/h3&gt;&lt;p&gt;其实，去年专业里就有同学参加扇贝杯了，也都拿了奖，之后我就决定开始练练算法，报一下明年的扇贝杯。&lt;/p&gt;
+&lt;p&gt;6月进了校队，大概练了整整3个月吧，结果就是基本数据结构从生疏到熟练，掌握stl，能做简单的贪心和动态规&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="oi比赛" scheme="http://yoursite.com/categories/oi%E6%AF%94%E8%B5%9B/"/>
+    
+    
+      <category term="吹水" scheme="http://yoursite.com/tags/%E5%90%B9%E6%B0%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>android——exp</title>
+    <link href="http://yoursite.com/2018/11/07/rxjava/"/>
+    <id>http://yoursite.com/2018/11/07/rxjava/</id>
+    <published>2018-11-07T07:45:03.791Z</published>
+    <updated>2018-11-23T14:02:43.386Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Rxjava"><a href="#Rxjava" class="headerlink" title="Rxjava"></a>Rxjava</h2><p>RxJava是一种基于观察者模式的响应式编程框架，其中的主要角色有： </p><p><strong>Observable</strong> 是RxJava描述的<strong>事件流</strong> </p><h3 id="fragment-java"><a href="#fragment-java" class="headerlink" title="fragment.java"></a>fragment.java</h3><p>setArguments(Bundle args)</p><p>作用：增加fragment构造函数（传参）时的多样性。</p><p>fragment重新构建，会调用<strong>默认</strong>的构造函数。</p><p>DiaryEditFragment：</p><p>（bufferKnife黄油刀）</p><p>为view绑定字段和方法</p><p>DiaryEditFragment构造函数(bundle)</p><p>@override</p><p>createPresenter()</p><p>setContentViewId()</p><p>initView(){</p><p>RxView.clicks()调用clicks方法返回一个Observable对象，每当点击这个View的时候，该Observable对象就会发射一个事件，随即调用onNext()方法， </p><p>}</p><p>DiaryEditPresenter.java</p><p>super(activity);</p><p>save(dairyID,dairyEntity,tags){}</p><p>//<strong>Presenter层持有View层对象的引用</strong> </p><p>DiaryEditContract.java</p><p>saveDone()–interface</p><p>save()–interface</p><p>glide 图片加载框架</p><p>Glide.with(this).load(url).into(imageView); </p><p>Rxbus 组件之间的通信</p><p>View类中的inflate方法内部包裹了LayoutInflater类的inflate方法，这个方法是一个静态方法，不需要创建View类的对象，直接使用View类名调用（布局填充？）</p><p>LayoutInflater类的作用是，将xml布局文件实例化为它对应的View对象。这个类不能直接使用，也就是不能直接调用其中的成员。一般，我们通过getLayoutInflater()方法或者 <code>getSystemService(String)</code> </p><p>xml文件在创建阶段的前处理过程严重影响View对象填充阶段的性能（进而影响整体软件的性能），这是因为inflate方法内部使用的pull解析，若是xml文件在进行填充之前已经被xml解析了，那么inflate方法在使用时就非常轻松，否则会非常困难。因此，我们不会使用LayoutInflater类处理普通的xml文件，而是用来处理已经编译的xml文件，例如R.··········，这样的xml文件会返回一个已经解析了xml文件的pull解析器，而普通的xml文件返回的解析器则不然。 </p><h4 id="public-View-inflate-int-resource-ViewGroup-root-boolean-attachToRoot"><a href="#public-View-inflate-int-resource-ViewGroup-root-boolean-attachToRoot" class="headerlink" title="public View inflate (int resource, ViewGroup root, boolean attachToRoot)"></a>public View inflate (int resource, ViewGroup root, boolean attachToRoot)</h4><p>第一个参数，就是我们要填充的xml文件</p><p>第二个参数，这个要和第三个参数有关系，大家慢慢看。若是第三个参数为true，那么第二个参数的意义是，从第一个参数填充成的view对象的父控件；若是第三个参数为false，那么第二个参数的意义是，</p><p>可以为第一个参数生成的view对象的根布局提供一系LayoutParams参数的控件。</p><p>第三个参数，从第一个参数填充成的view对象是否要附着到第二个参数指定的空间上作为子控件。</p><p>说明：第一个参数不需多说，我们一般就从resource目录下找到我们要填充的布局文件即可，切不可用普通的xml文件进行填充，除非我们自己做好了相应的xmlpullparser。</p><p>若第二个参数为null，也就是我们不指定父控件，那么新生产的view对象的根布局的某些参数会失效，比如Layout_width和Layout_height会失效，这个大家可以做实验尝试，无论第三个参数是什么。</p><p> 返回：若提供了root，且第三个参数为true，则返回root作为根布局，否则，返回填充出的view对象的根布局作为根布局。 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Rxjava&quot;&gt;&lt;a href=&quot;#Rxjava&quot; class=&quot;headerlink&quot; title=&quot;Rxjava&quot;&gt;&lt;/a&gt;Rxjava&lt;/h2&gt;&lt;p&gt;RxJava是一种基于观察者模式的响应式编程框架，其中的主要角色有： &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Obs
+      
+    
+    </summary>
+    
+      <category term="Rxjava" scheme="http://yoursite.com/categories/Rxjava/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+  </entry>
   
   <entry>
     <title>loginUI</title>
@@ -28,28 +140,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Login-ui&quot;&gt;&lt;a href=&quot;#Login-ui&quot; class=&quot;headerlink&quot; title=&quot;Login_ui&quot;&gt;&lt;/a&gt;Login_ui&lt;/h2&gt;&lt;h4 id=&quot;来自一个钢铁直男的ui。&quot;&gt;&lt;a href=&quot;#来自一个钢铁直男的ui。&quot; class=&quot;headerlink&quot; title=&quot;来自一个钢铁直男的ui。&quot;&gt;&lt;/a&gt;来自一个钢铁直男的ui。&lt;/h4&gt;&lt;p&gt;感觉android的layout和前端的html&amp;amp;css一模一样，或许是因为移动端屏幕小的缘故吧，感觉比前端简单一些。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://yoursite.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://yoursite.com/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>android入门</title>
-    <link href="http://yoursite.com/2018/10/16/android_note1%20/"/>
-    <id>http://yoursite.com/2018/10/16/android_note1 /</id>
-    <published>2018-10-16T14:58:18.198Z</published>
-    <updated>2018-10-17T02:35:14.678Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Android组件"><a href="#Android组件" class="headerlink" title="Android组件"></a>Android组件</h2><h4 id="（一）Activity"><a href="#（一）Activity" class="headerlink" title="（一）Activity"></a>（一）Activity</h4><p>一个activity就是一个页面。</p><a id="more"></a><h4 id="（二）Service"><a href="#（二）Service" class="headerlink" title="（二）Service"></a>（二）Service</h4><p>完成耗时较长的操作，如网络连接，在后台运行。</p><h4 id="（三）Content-Provider"><a href="#（三）Content-Provider" class="headerlink" title="（三）Content Provider"></a>（三）Content Provider</h4><p>对外提供数据。</p><h4 id="（四）BroadcastReceiver"><a href="#（四）BroadcastReceiver" class="headerlink" title="（四）BroadcastReceiver"></a>（四）BroadcastReceiver</h4><p>监听手机出项的各种情况，起接收功能。</p><h2 id="设置View属性"><a href="#设置View属性" class="headerlink" title="设置View属性"></a>设置View属性</h2><p>方法一：layout中的xml中设置</p><p>方法二：MainActivity中用java来实现属性修改</p><h2 id="为控件绑定监听器"><a href="#为控件绑定监听器" class="headerlink" title="为控件绑定监听器"></a>为控件绑定监听器</h2><h4 id="（一）获取代表控件的对象"><a href="#（一）获取代表控件的对象" class="headerlink" title="（一）获取代表控件的对象"></a>（一）获取代表控件的对象</h4><h4 id="（二）定义一个类，实现监听器的接口"><a href="#（二）定义一个类，实现监听器的接口" class="headerlink" title="（二）定义一个类，实现监听器的接口"></a>（二）定义一个类，实现监听器的接口</h4><h4 id="（三）生成监听器对象"><a href="#（三）生成监听器对象" class="headerlink" title="（三）生成监听器对象"></a>（三）生成监听器对象</h4><h4 id="（四）为控件绑定监听器对象"><a href="#（四）为控件绑定监听器对象" class="headerlink" title="（四）为控件绑定监听器对象"></a>（四）为控件绑定监听器对象</h4><h2 id="控件布局"><a href="#控件布局" class="headerlink" title="控件布局"></a>控件布局</h2><p>方法一：使用布局文件完成控件布局</p><p>方法二：在Java代码中完成控件布局</p><h2 id="布局方法分类"><a href="#布局方法分类" class="headerlink" title="布局方法分类"></a>布局方法分类</h2><p>Linear Layout/Relative Layout</p><p>ListView/Grid View</p><h4 id="线性布局初步："><a href="#线性布局初步：" class="headerlink" title="线性布局初步："></a>线性布局初步：</h4><p>layout新建一个xml；</p><p>Linear Layout里加控件；</p><p>MainActivity.java—&gt;onCreate（）函数—&gt;setContentView（R.layout.调用的xml）;</p><h2 id="距离单位"><a href="#距离单位" class="headerlink" title="距离单位"></a>距离单位</h2><p>距离单位px：像素</p><p>距离单位dp：较稳定（控件高度和宽度）</p><p>距离单位sp：随着用户设置字体的变化而变化（控件字体）</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Android组件&quot;&gt;&lt;a href=&quot;#Android组件&quot; class=&quot;headerlink&quot; title=&quot;Android组件&quot;&gt;&lt;/a&gt;Android组件&lt;/h2&gt;&lt;h4 id=&quot;（一）Activity&quot;&gt;&lt;a href=&quot;#（一）Activity&quot; class=&quot;headerlink&quot; title=&quot;（一）Activity&quot;&gt;&lt;/a&gt;（一）Activity&lt;/h4&gt;&lt;p&gt;一个activity就是一个页面。&lt;/p&gt;
     
     </summary>
     
